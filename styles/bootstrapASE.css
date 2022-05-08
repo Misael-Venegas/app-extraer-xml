@@ -1,0 +1,359 @@
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+  background-color: #f5f5f5 !important;
+
+}
+
+
+.ant-layout-header {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.cabecera-ant {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.bd-callout {
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #eee;
+  border-left-width: .25rem;
+  border-radius: .25rem;
+}
+
+.bd-callout-warning {
+  border-left-color: #f0ad4e;
+}
+
+.bg-muted {
+  background-color: #6c757d !important; 
+}
+
+.texto-parrafo {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+}
+
+.cabecera-login {
+  background-image: url(../images/otro-fondo.jpg);
+  height: 450px;
+  width: '100%';
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.col-login {
+  height: 600px;
+  background-color: #fff;
+}
+
+.contenido-login {
+  margin-top: -100px;
+  margin-right: 0px;
+  margin-left: 0px;
+  border-radius: 50px;
+}
+
+.logo-login {
+  display: none;
+}
+
+
+
+@media screen and (min-width: 1024px) {
+  .contenido-login {
+    margin-top: -180px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .contenido-login {
+    margin-top: -180px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .contenido-login {
+    margin-top: -135px;    
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .logo-login {
+    display: block;
+  }
+
+  .cabecera-login {
+    background-image: url(../images/personal-ase.png);
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .col-login {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .contenido-login {
+    margin-top: -100px;
+  }
+}
+
+.required {
+  color: red;
+}
+
+.bg-eliminar {
+  cursor: pointer;
+}
+
+.otros_datos {
+  display: none;
+}
+
+.centrado {
+  margin-top: 50%;
+}
+
+.main-footer {
+  color: white;
+  height: 100px;
+}
+
+.cssload-container {
+  width: 100%;
+  height: 32px;
+  text-align: center;
+}
+
+/*estilos para la tabla*/
+#tabla_dictamenes td {
+  cursor: pointer;
+}
+
+#tabla_dictamenes tbody tr:hover {
+  background-color: #a00d0d;
+  color: white;
+}
+
+
+/*estilos pra el menú circular*/
+
+.ch-grid {
+  margin: 20px 0 0 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.ch-grid:after,
+.ch-item:before {
+  content: "";
+  display: table;
+}
+
+.ch-grid:after {
+  clear: both;
+}
+
+.ch-grid li {
+  width: 220px;
+  height: 220px;
+  display: inline-block;
+  margin: 20px;
+}
+
+.ch-grid li:hover {
+  cursor: pointer;
+}
+
+.ch-item {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  cursor: default;
+  perspective: 900px;
+}
+
+.ch-item:hover {
+  cursor: pointer;
+}
+
+.ch-info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.ch-info > div {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-position: center center;
+  transition: all 0.4s linear;
+  transform-origin: 50% 0%;
+}
+
+.ch-info .ch-info-front {
+  box-shadow: inset 0 0 0 16px rgba(0, 0, 0, 0.3);
+}
+
+.ch-info .ch-info-back {
+  transform: translate3d(0, 0, -220px) rotate3d(1, 0, 0, 90deg);
+  opacity: 0;
+}
+
+/*#A00D0D*/
+.ch-img-1 {
+  background-image: url(/assets/images/zz.png);
+  background-repeat: no-repeat;
+}
+
+.ch-img-2 {
+  background-image: url(/assets/images/megafono.png);
+  background-repeat: no-repeat;
+}
+
+.ch-img-3 {
+  background-image: url(/assets/images/cita.png);
+  background-repeat: no-repeat;
+  background-size: unset;
+}
+
+.ch-info h3 {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 24px;
+  margin: 0 15px;
+  padding: 60px 0 0 0;
+  height: 110px;
+  font-family: "Open Sans", Arial, sans-serif;
+  text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.ch-info p {
+  color: #fff;
+  padding: 10px 5px;
+  font-style: italic;
+  margin: 0 30px;
+  font-size: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.ch-info p a {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding-top: 4px;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+.ch-info p a:hover {
+  color: rgba(255, 242, 34, 0.8);
+}
+
+.ch-item:hover .ch-info-front {
+  transform: translate3d(0, 280px, 0) rotate3d(1, 0, 0, -90deg);
+  opacity: 0;
+}
+
+.ch-item:hover .ch-info-back {
+  transform: rotate3d(1, 0, 0, 0deg);
+  opacity: 1;
+}
+
+
+/*layout admin*/
+
+.topbar {
+	padding: 0 rem(30);
+	min-height: 64px;
+	height: 64px;
+	border-bottom: 1px solid #ccc;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+
+.dropdown {
+	padding-right: 15px;
+	position: relative;
+	cursor: pointer;
+}
+.dropdown::after {
+	opacity: 0.5;
+	color: #595c97;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-top: -2px;
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 0.255em;
+	vertical-align: 0.255em;
+	content: '';
+	border-top: 0.3em solid;
+	border-right: 0.3em solid transparent;
+	border-bottom: 0;
+	border-left: 0.3em solid transparent;
+}
+.dropdown:hover {
+	color: blue;
+}
+.dropdown:hover::after {
+	color: #ccc;
+}
+
+[data-kit-theme='dark'] .avatar {
+	background:#ccc !important;
+}
+
+.logoHospital {
+    height: 40px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 16px;
+}
+  
+
+
+
+  /*
+  
+  para visitas
+  */
+
+  .edificio-activo {
+    border: 2px solid #1890ff;
+  }
+
+  .anticon- * {
+    margin-top: -6px;
+  }

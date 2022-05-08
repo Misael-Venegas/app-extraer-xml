@@ -1,36 +1,64 @@
 import React, { useState } from 'react'
-
+import Layout from "../layout/Layout"
 const Inicio = () => {
-    const [texto, settexto] = useState("")
+
+    const [arrayTexto, setArrayTexto] = useState([])
+
+
     const readFile = (e) => {
-        const archivo = e.target.files[0];
-        if (!archivo) return;
-        console.log(archivo)
-        const fileReader = new FileReader();
-        fileReader.readAsText(archivo)
-        fileReader.onload = () => {
-            settexto(fileReader.result);
-        }
 
-        fileReader.onerror = () => {
-            console.log(fileReader.error)
-        }
+        let lecturas = [];
+        const archivos = e.target.files;
+        if (!archivos.length) return;
 
-     
+        for (let index = 0; index < archivos.length; index++) {
+            lecturas.push(extraerInfo(archivos[index]))
+        }
+        Promise.all(lecturas).then((values) => {
+            setArrayTexto(values);
+        })
     }
 
-    const extraerInfo = () =>{
-        console.log(texto)
+
+
+    const extraerInfo = (archivo) => {
+
+        return new Promise(function (resolve, reject) {
+            let fr = new FileReader();
+            fr.onload = function () {
+                resolve(fr.result)
+            }
+            fr.onerror = function () {
+                reject(fr);
+            };
+
+            fr.readAsText(archivo);
+        }
+        )
+
     }
+
+
     return (
-        <div className='divContenedor'>
-            <input type="file" accept='.xml' onChange={readFile} />
-            <button onClick={extraerInfo} >extraer</button>
-            <div style={{ width: "50% ", height: "50%" }}>
-                <p> {texto} </p>
-            </div>
+        <>
+            <Layout>
+                <input type="file" multiple={true} accept='.xml' onChange={readFile} />
+                <button onClick={extraerInfo} >extraer</button>
 
-        </div>
+                {
+                    arrayTexto && arrayTexto.map((txt, key) => {
+                        return (
+                            <div key={key} >
+                                <p> {txt} </p>
+                            </div>
+                        )
+                    })
+                }
+
+            </Layout>
+        </>
+
+
     )
 }
 
