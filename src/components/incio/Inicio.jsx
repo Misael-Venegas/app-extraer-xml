@@ -1,9 +1,11 @@
+import { PDFViewer } from '@react-pdf/renderer/lib/react-pdf.browser.cjs'
 import React, { useState } from 'react'
 import Layout from "../layout/Layout"
+import CrearPdf from '../../../pdf/CrearPdf'
+import { Button } from 'antd'
 const Inicio = () => {
 
     const [arrayTexto, setArrayTexto] = useState([])
-
 
     const readFile = (e) => {
 
@@ -42,19 +44,19 @@ const Inicio = () => {
     return (
         <>
             <Layout>
-                <input type="file" multiple={true} accept='.xml' onChange={readFile} />
-                <button onClick={extraerInfo} >extraer</button>
+                <div className='divDrag'>
+                    <input type="file" multiple={true} accept='.xml' onChange={readFile} className="ant-btn ant-btn-default" />
+                    <br /><br />
 
-                {
-                    arrayTexto && arrayTexto.map((txt, key) => {
-                        return (
-                            <div key={key} >
-                                <p> {txt} </p>
-                            </div>
-                        )
-                    })
-                }
-
+                    <Button onClick={extraerInfo} type='primary' >extraer</Button>
+                    <br />
+                    <br />
+                    {
+                        arrayTexto.length > 0 && <PDFViewer style={{ width: "100%", height: "95vh" }} >
+                            <CrearPdf array={arrayTexto} />
+                        </PDFViewer>
+                    }
+                </div>
             </Layout>
         </>
 

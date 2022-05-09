@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
                 style={{ width: "150px" }}
                 alt="logo"
             />
-            <div className="container shadow pt-3 mt-2 bg-white rounded" style={{ minHeight: '90vh' }} >
+            <div className="container shadow pt-3 mt-2 bg-white rounded" style={{ minHeight: '90vh', wordWrap: 'break-word' }} >
                 {children}
             </div> 
         </>
